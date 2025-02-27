@@ -7,7 +7,7 @@
 
 📌 专业的代码书签管理工具 | 支持可视化关系图 | 跨工作区同步 | 数据加密
 
-![功能演示](images/demo.gif)
+![功能演示](images/1.png)
 
 ## 简介
 
@@ -16,7 +16,7 @@
 ## 🌍 多语言支持
 本扩展目前支持以下语言：
 - 简体中文 (默认)
-- English ([帮助翻译](https://github.com/Vogadero/Bookmark/issues/12))
+- English ([帮助翻译](https://github.com/Vogadero/my-bookmark/Bookmark/issues/12))
 
 切换语言方式：
 ```json
@@ -107,7 +107,7 @@ code --install-extension ./bookmark-1.0.0.vsix
 
 5. 代码规范
 
-   请先阅读[贡献指南](vscode-webview://0khkdn2j8525463bq40sgktn2gqlie9imkvuhie6p6fkhsp7guor/CONTRIBUTING.md)，主要规范包括：
+   请先阅读[贡献指南]((https://github.com/Vogadero/my-bookmark/blob/master/CONTRIBUTING.md))，主要规范包括：
 
    - 代码规范
 
@@ -157,7 +157,7 @@ code --install-extension ./bookmark-1.0.0.vsix
 获取帮助的途径：
 
 1. 📚 [官方文档](https://vogadero.github.io/Bookmark/)
-2. 🐛 [问题追踪系统](https://github.com/Vogadero/Bookmark/issues)
+2. 🐛 [问题追踪系统](https://github.com/Vogadero/my-bookmark/Bookmark/issues)
 3. 📧 开发者邮箱：[994019222@qq.com](mailto:994019222@qq.com)、[15732651140@163.com](mailto:15732651140@163.com)
 4. 📱 紧急联系：+86 157-3265-1140
 
