@@ -1,0 +1,431 @@
+{
+    "name": "bookmark",
+    "displayName": "Bookmark",
+    "description": "Simple code bookmark extension with line marking",
+    "version": "1.0.0",
+    "publisher": "Vogadero",
+    "engines": {
+        "vscode": "^1.97.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "files": [
+        "dist/**/*"
+    ],
+    "main": "./dist/extension.js",
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "bookmark.showLogs",
+                "title": "显示书签日志",
+                "category": "Bookmark"
+            },
+            {
+                "command": "bookmark.add",
+                "title": "添加书签",
+                "category": "Bookmark"
+            },
+            {
+                "command": "bookmark.remove",
+                "title": "删除书签"
+            },
+            {
+                "command": "bookmark.clearAll",
+                "title": "清除所有书签"
+            },
+            {
+                "command": "bookmark.reveal",
+                "title": "显示书签"
+            },
+            {
+                "command": "bookmark.rename",
+                "title": "重命名"
+            },
+            {
+                "command": "bookmark.removeFromTree",
+                "title": "删除"
+            },
+            {
+                "command": "bookmark.next",
+                "title": "跳转到下一个书签",
+                "category": "Bookmark"
+            },
+            {
+                "command": "bookmark.previous",
+                "title": "跳转到上一个书签",
+                "category": "Bookmark"
+            },
+            {
+                "command": "bookmark.share",
+                "title": "分享",
+                "category": "Bookmark"
+            },
+            {
+                "command": "bookmark.showGraph",
+                "title": "关系图",
+                "tooltip": "关系图",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/graph-light.svg",
+                    "dark": "images/graph-dark.svg"
+                }
+            },
+            {
+                "command": "bookmark.export",
+                "title": "导出",
+                "tooltip": "导出",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/export-light.svg",
+                    "dark": "images/export-dark.svg"
+                }
+            },
+            {
+                "command": "bookmark.import",
+                "title": "导入",
+                "tooltip": "导入",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/import-light.svg",
+                    "dark": "images/import-dark.svg"
+                }
+            },
+            {
+                "command": "bookmark.help",
+                "title": "帮助",
+                "tooltip": "帮助",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/help-light.svg",
+                    "dark": "images/help-dark.svg"
+                }
+            },
+            {
+                "command": "bookmark.search",
+                "title": "搜索",
+                "tooltip": "搜索",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/search-light.svg",
+                    "dark": "images/search-dark.svg"
+                }
+            },
+            {
+                "command": "bookmark.clear",
+                "title": "重置",
+                "tooltip": "重置",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/clear-light.svg",
+                    "dark": "images/clear-dark.svg"
+                }
+            },
+            {
+                "command": "bookmark.fold",
+                "title": "折叠",
+                "tooltip": "折叠",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/fold-light.svg",
+                    "dark": "images/fold-dark.svg"
+                }
+            },
+            {
+                "command": "bookmark.refresh",
+                "title": "刷新",
+                "tooltip": "刷新",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/refresh-light.svg",
+                    "dark": "images/refresh-dark.svg"
+                }
+            },
+            {
+                "command": "bookmark.set",
+                "title": "设置",
+                "tooltip": "设置",
+                "category": "Bookmark",
+                "icon": {
+                    "light": "images/set-light.svg",
+                    "dark": "images/set-dark.svg"
+                }
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "bookmark.add",
+                "key": "ctrl+alt+k",
+                "when": "editorTextFocus",
+                "title": "添加书签",
+                "category": "Bookmark",
+                "suggestions": [
+                    "ctrl+cmd+k",
+                    "alt+cmd+k",
+                    "ctrl+shift+k"
+                ]
+            },
+            {
+                "command": "bookmark.clearAll",
+                "key": "ctrl+alt+l",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "bookmark.remove",
+                "key": "ctrl+alt+d",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "bookmark.next",
+                "key": "ctrl+alt+n",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "bookmark.previous",
+                "key": "ctrl+alt+p",
+                "when": "editorTextFocus"
+            }
+        ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "bookmarkContainer",
+                    "title": "书签",
+                    "icon": "images/bookmark-icon.svg"
+                }
+            ]
+        },
+        "views": {
+            "bookmarkContainer": [
+                {
+                    "id": "bookmarkView",
+                    "name": "Bookmarks",
+                    "icon": "images/bookmark-icon.svg"
+                }
+            ]
+        },
+        "menus": {
+            "view/title": [
+                {
+                    "command": "bookmark.search",
+                    "when": "view == bookmarkView",
+                    "group": "navigation@1"
+                },
+                {
+                    "command": "bookmark.clear",
+                    "when": "view == bookmarkView",
+                    "group": "navigation@2"
+                },
+                {
+                    "command": "bookmark.refresh",
+                    "when": "view == bookmarkView",
+                    "group": "navigation@4"
+                },
+                {
+                    "command": "bookmark.export",
+                    "when": "view == bookmarkView",
+                    "group": "navigation@5"
+                },
+                {
+                    "command": "bookmark.import",
+                    "when": "view == bookmarkView",
+                    "group": "navigation@6"
+                },
+                {
+                    "command": "bookmark.showGraph",
+                    "when": "view == bookmarkView",
+                    "group": "navigation@7"
+                },
+                {
+                    "command": "bookmark.help",
+                    "when": "view == bookmarkView",
+                    "group": "navigation@8"
+                },
+                {
+                    "command": "bookmark.set",
+                    "when": "view == bookmarkView",
+                    "group": "navigation@9"
+                }
+            ],
+            "view/item/context": [
+                {
+                    "command": "bookmark.rename",
+                    "when": "view == bookmarkView && viewItem == bookmark"
+                },
+                {
+                    "command": "bookmark.removeFromTree",
+                    "when": "view == bookmarkView && viewItem == bookmark"
+                },
+                {
+                    "command": "bookmark.share",
+                    "when": "view == bookmarkView && viewItem == bookmark"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "Bookmark",
+            "properties": {
+                "bookmark.graphSettings.nodeScale": {
+                    "type": "number",
+                    "default": 1.5,
+                    "description": "节点大小缩放系数",
+                    "minimum": 0.5,
+                    "maximum": 5
+                },
+                "bookmark.graphSettings.linkOpacity": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "default": 0.3,
+                    "description": "连线透明度 (0-1)"
+                },
+                "bookmark.graphSettings.layout": {
+                    "type": "string",
+                    "enum": [
+                        "force",
+                        "circular",
+                        "hierarchy",
+                        "grid"
+                    ],
+                    "default": "force",
+                    "description": "选择可视化布局算法"
+                },
+                "bookmark.highlightDuration": {
+                    "type": "number",
+                    "default": 3000,
+                    "description": "高亮动画持续时间（毫秒）"
+                },
+                "bookmark.staticHighlight": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "是否启用静态高亮"
+                },
+                "bookmark.groupSortOrder": {
+                    "type": "string",
+                    "enum": [
+                        "name-asc",
+                        "name-desc",
+                        "count-asc",
+                        "count-desc",
+                        "path-asc",
+                        "path-desc"
+                    ],
+                    "enumDescriptions": [
+                        "按名称升序（默认）",
+                        "按名称降序",
+                        "按书签数升序",
+                        "按书签数降序",
+                        "按路径升序",
+                        "按路径降序"
+                    ],
+                    "default": "name-asc",
+                    "description": "书签分组的排序方式"
+                },
+                "bookmark.searchIndicator": {
+                    "type": "string",
+                    "enum": [
+                        "text",
+                        "both"
+                    ],
+                    "default": "both",
+                    "description": "搜索匹配项的显示方式"
+                },
+                "bookmark.exportFormat": {
+                    "type": "string",
+                    "enum": [
+                        "markdown",
+                        "json",
+                        "csv",
+                        "txt"
+                    ],
+                    "default": "markdown",
+                    "description": "默认导出文件格式"
+                },
+                "bookmark.autoDetectChanges": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "自动检测书签关联文件的变更"
+                },
+                "bookmark.storageMode": {
+                    "type": "string",
+                    "enum": [
+                        "global",
+                        "workspace"
+                    ],
+                    "default": "workspace",
+                    "description": "选择书签存储模式：全局(global)或工作区隔离(workspace)"
+                },
+                "bookmark.enableEncryption": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "启用书签数据加密（需要设置加密密钥）"
+                },
+                "bookmark.encryptionKey": {
+                    "type": "string",
+                    "description": "AES-256加密密钥（32字节字符），留空将自动生成",
+                    "scope": "application"
+                }
+            }
+        },
+        "css": {
+            "extension": [
+                "styles/highlight.css"
+            ]
+        }
+    },
+    "scripts": {
+        "build": "webpack --mode production",
+        "dev": "webpack --mode development --watch",
+        "vscode:prepublish": "webpack --mode production",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "npm run compile-tests && npm run compile && npm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test --extensionDevelopmentPath=. --extensionTestsPath=out/test",
+        "coverage": "nyc npm run test && nyc report --reporter=lcov",
+        "package": "npm run build && vsce package"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.10",
+        "@types/node": "20.x",
+        "@types/vscode": "^1.97.0",
+        "@typescript-eslint/eslint-plugin": "^8.22.0",
+        "@typescript-eslint/parser": "^8.22.0",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.4.1",
+        "eslint": "^9.19.0",
+        "file-loader": "^6.2.0",
+        "nyc": "^17.1.0",
+        "ts-loader": "^9.5.2",
+        "typescript": "^5.7.3",
+        "webpack": "^5.97.1",
+        "webpack-cli": "^6.0.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Vogadero/Bookmark"
+    },
+    "bugs": {
+        "url": "https://github.com/Vogadero/Bookmark/issues"
+    },
+    "homepage": "https://github.com/Vogadero/Bookmark#readme",
+    "license": "MIT",
+    "icon": "images/bookmark-icon.png",
+    "dependencies": {
+        "@fontsource/fira-code": "^5.1.1",
+        "@types/highlight.js": "^9.12.4",
+        "@types/qrcode": "^1.5.5",
+        "@types/three": "^0.173.0",
+        "@types/uuid": "^10.0.0",
+        "async-mutex": "^0.5.0",
+        "d3-force": "^3.0.0",
+        "highlight.js": "^11.11.1",
+        "is-svg": "^5.1.0",
+        "qrcode": "^1.5.4",
+        "three": "^0.173.0",
+        "uuid": "^11.0.5"
+    }
+}

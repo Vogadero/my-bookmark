@@ -1,0 +1,18 @@
+.vscode/**
+.vscode-test/**
+out/**
+node_modules/**
+src/**
+.gitignore
+.yarnrc
+webpack.config.js
+vsc-extension-quickstart.md
+**/tsconfig.json
+**/eslint.config.mjs
+**/*.map
+**/*.ts
+**/.vscode-test.*
+node_modules/qrcode/**/*.md
+node_modules/qrcode/**/*.spec.js
+# 确保包含类型声明
+!node_modules/@types/qrcode/**
