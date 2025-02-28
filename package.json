@@ -2,7 +2,7 @@
     "name": "bookmarkify",
     "displayName": "Bookmarkify",
     "description": "Simple code bookmark extension with line marking",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "Vogadero",
     "engines": {
         "vscode": "^1.97.0"
