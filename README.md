@@ -154,8 +154,8 @@ code --install-extension ./bookmark-1.0.0.vsix
 
 获取帮助的途径：
 
-1. 📚 [官方文档](https://vogadero.github.io/Bookmark/)
-2. 🐛 [问题追踪系统](https://github.com/Vogadero/my-bookmark/Bookmark/issues)
+1. 📚 [官方文档](https://vogadero.github.io/my-bookmark/)
+2. 🐛 [问题追踪系统](https://github.com/Vogadero/my-bookmark/issues)
 3. 📧 开发者邮箱：[994019222@qq.com](mailto:994019222@qq.com)、[15732651140@163.com](mailto:15732651140@163.com)
 4. 📱 紧急联系：+86 157-3265-1140
 
