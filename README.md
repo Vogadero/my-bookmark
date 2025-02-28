@@ -105,7 +105,7 @@ code --install-extension ./bookmark-1.0.0.vsix
 
 5. 代码规范
 
-   请先阅读[贡献指南]((https://github.com/Vogadero/my-bookmark/blob/master/CONTRIBUTING.md))，主要规范包括：
+   请先阅读[贡献指南](https://github.com/Vogadero/my-bookmark/blob/master/CONTRIBUTING.md)，主要规范包括：
 
    - 代码规范
 
