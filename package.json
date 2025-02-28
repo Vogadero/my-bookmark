@@ -1,6 +1,6 @@
 {
-    "name": "bookmark",
-    "displayName": "Bookmark",
+    "name": "bookmarkify",
+    "displayName": "Bookmarkify",
     "description": "Simple code bookmark extension with line marking",
     "version": "1.0.0",
     "publisher": "Vogadero",
@@ -406,12 +406,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Vogadero/Bookmark"
+        "url": "https://github.com/Vogadero/my-bookmark"
     },
     "bugs": {
-        "url": "https://github.com/Vogadero/Bookmark/issues"
+        "url": "https://github.com/Vogadero/my-bookmark/issues"
     },
-    "homepage": "https://github.com/Vogadero/Bookmark#readme",
+    "homepage": "https://github.com/Vogadero/my-bookmark#readme",
     "license": "MIT",
     "icon": "images/bookmark-icon.png",
     "dependencies": {

@@ -1,8 +1,6 @@
 # Bookmark Extension <img src="images/bookmark-icon.png" alt="icon" width="40" />
 
 [![VS Code Version](https://img.shields.io/badge/VS%20Code-%3E%3D1.97.0-blue.svg)](https://code.visualstudio.com/)
-[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/Vogadero.bookmark.svg)](https://marketplace.visualstudio.com/items?itemName=Vogadero.bookmark)
-[![Install Count](https://vsmarketplacebadge.apphb.com/installs-short/Vogadero.bookmark.svg)](https://marketplace.visualstudio.com/items?itemName=Vogadero.bookmark)
 [![GitHub License](https://img.shields.io/github/license/Vogadero/bookmark.svg)](LICENSE)
 
 📌 专业的代码书签管理工具 | 支持可视化关系图 | 跨工作区同步 | 数据加密
@@ -50,12 +48,12 @@
 
 ### 市场安装
 1. 打开 VS Code (`Ctrl+Shift+X` 打开扩展面板)
-2. 搜索 `Bookmark by Vogadero`
+2. 搜索 `Bookmarkify by Vogadero`
 3. 点击安装按钮
 
 ### 手动安装
 ```bash
-git clone https://github.com/Vogadero/Bookmark.git
+git clone https://github.com/Vogadero/my-bookmark.git
 cd Bookmark
 npm install
 npm run package

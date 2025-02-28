@@ -12,7 +12,7 @@
 ### Fixed 
 - (已修复问题...)
 
-## [1.0.0] - 2024-02-20
+## [1.0.0] - 2024-02-28
 ### Added
 - ✨ 新增核心书签功能：
   - 通过 `Ctrl+Alt+K` 快捷键添加行书签
@@ -34,5 +34,5 @@
 
 
 
-[Unreleased]: https://github.com/Vogadero/Bookmark/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/Vogadero/Bookmark/releases/tag/v1.0.0
+[Unreleased]: https://github.com/Vogadero/my-bookmark/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/Vogadero/my-bookmark/releases/tag/v1.0.0

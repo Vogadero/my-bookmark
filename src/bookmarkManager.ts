@@ -31,6 +31,10 @@ export class BookmarkManager {
         return BookmarkManager.instance;
     }
 
+    public testPathConversion(uri: vscode.Uri): string {
+        return this.getRelativePath(uri);
+    }
+
     // 核心书签操作 ==============================================
     public addBookmark(uri: vscode.Uri, lineNumber: number): Bookmark {
         const workspace = vscode.workspace.getWorkspaceFolder(uri);

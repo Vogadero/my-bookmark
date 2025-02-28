@@ -2,6 +2,7 @@ import * as assert from "assert";
 import * as vscode from "vscode";
 import { activate } from "../extension";
 import { BookmarkManager } from "../bookmarkManager";
+import type { Bookmark } from "../bookmarkManager"; // 新增类型导入
 
 // 测试超时设置为5秒
 const TEST_TIMEOUT = 5000;
@@ -39,8 +40,26 @@ suite("书签扩展测试套件", () => {
 
         const bookmarks = bookmarkManager.getBookmarks();
         assert.strictEqual(bookmarks.length, 1, "书签数量不符");
-        assert.strictEqual(bookmarks[0].line, testLine, "书签行号错误");
-        assert.strictEqual(bookmarks[0].uri.fsPath, testDocument.uri.fsPath, "文档路径不符");
+        assert.strictEqual(bookmarks[0].lineNumber, testLine, "书签行号错误");
+        assert.strictEqual(
+            bookmarkManager.getAbsolutePath(bookmarks[0]), // 使用管理器提供的路径转换方法
+            testDocument.uri.fsPath,
+            "文档路径不符"
+        );
+    }).timeout(TEST_TIMEOUT);
+
+    test("应正确处理路径转换", async () => {
+        const testUri = testDocument.uri;
+        const relativePath = bookmarkManager.testPathConversion(testUri);
+
+        assert.strictEqual(
+            bookmarkManager.getAbsolutePath({
+                filePath: relativePath,
+                workspaceFolder: vscode.workspace.getWorkspaceFolder(testUri)?.uri.fsPath,
+            } as Bookmark),
+            testUri.fsPath,
+            "路径转换逻辑错误"
+        );
     }).timeout(TEST_TIMEOUT);
 
     test("应正确删除书签", async () => {
@@ -53,7 +72,7 @@ suite("书签扩展测试套件", () => {
 
         const bookmarks = bookmarkManager.getBookmarks();
         assert.strictEqual(bookmarks.length, 1, "删除后书签数量错误");
-        assert.strictEqual(bookmarks[0].line, 0, "剩余书签行号错误");
+        assert.strictEqual(bookmarks[0].lineNumber, 0, "剩余书签行号错误");
     }).timeout(TEST_TIMEOUT);
 
     test("应正确导航书签", async () => {
@@ -75,14 +94,19 @@ suite("书签扩展测试套件", () => {
     }).timeout(TEST_TIMEOUT);
 
     test("应正确处理无书签情况", async () => {
-        // 确保没有书签
         await bookmarkManager.clearAllBookmarks();
 
         try {
             await bookmarkManager.jumpToNext();
             assert.fail("应抛出无书签错误");
         } catch (err) {
-            assert.match(err.message, /没有可用的书签/, "错误信息不符");
+            // 添加类型检查
+            assert.ok(err instanceof Error, "错误类型不符");
+            assert.match(
+                (err as Error).message, // 使用类型断言
+                /没有可用的书签/,
+                "错误信息不符"
+            );
         }
     }).timeout(TEST_TIMEOUT);
 
