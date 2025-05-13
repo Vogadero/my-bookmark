@@ -418,7 +418,7 @@
         "@fontsource/fira-code": "^5.1.1",
         "@types/highlight.js": "^9.12.4",
         "@types/qrcode": "^1.5.5",
-        "@types/three": "^0.173.0",
+        "@types/three": "^0.175.0",
         "@types/uuid": "^10.0.0",
         "async-mutex": "^0.5.0",
         "d3-force": "^3.0.0",
