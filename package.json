@@ -415,7 +415,7 @@
     "license": "MIT",
     "icon": "images/bookmark-icon.png",
     "dependencies": {
-        "@fontsource/fira-code": "^5.1.1",
+        "@fontsource/fira-code": "^5.2.5",
         "@types/highlight.js": "^9.12.4",
         "@types/qrcode": "^1.5.5",
         "@types/three": "^0.173.0",
